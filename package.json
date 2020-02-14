@@ -1,6 +1,6 @@
 {
   "name": "box-shadow-generator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Pavel Kuzyakin <pavel@kuzyakin.me> (https://kuzyakin.me)",
   "dependencies": {

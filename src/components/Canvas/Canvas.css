@@ -8,14 +8,17 @@
     width: 100%;
 }
 
-.settingsItem input[type=checkbox], .settingsItem input[type=color] {
-    margin-left: -10px;
+.settingsItem input[type=checkbox] {
+    margin-left: -34px;
 }
 
 .settingsItem input[type=number] {
     width: 100%;
-    max-width: 5ch;
+    max-width: 6ch;
     margin-left: 1rem;
+    padding: 0 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
 }
 
 .settingsItem input[type=text] {
@@ -27,7 +30,7 @@
 .settingsItem label {
     margin-right: 1rem;
     margin-bottom: 0;
-    width: 90px;
+    width: 140px;
 }
 
 .settingsItem .colorPicker {
@@ -41,6 +44,7 @@ code {
     justify-content: center;
     background: #e5e5e5;
     border-radius: 5px;
+    width: 100%;
 }
 
 .bs-example-wrapper {
@@ -54,4 +58,33 @@ code {
     max-width: 400px;
     min-height: 200px;
     border: 1px solid #e5e5e5;
+}
+
+.value::after{
+    content: '€';
+    margin-left: 5px;
+}
+
+input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #999;
+    border-radius: 5px;
+    width: 100%;
+    height: 1px;
+    outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.1);
 }

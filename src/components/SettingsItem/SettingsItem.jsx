@@ -1,7 +1,7 @@
 import React from 'react';
 
 class SettingsItem extends React.Component {
-  renderItem = ({ checked = false, max, min, name = '', onChange, type, value }) => {
+  renderItem = ({ checked = false, max, min, name = '', onChange, onKeyUp, type, value }) => {
       switch (type) {
         case 'checkbox':
           return (
@@ -21,19 +21,22 @@ class SettingsItem extends React.Component {
               <div className="settingsItem">
                 <label htmlFor={name}>{name}</label>
                 <input
-                    type="range"
-                    onChange={onChange}
-                    value={value}
-                    name={name}
-                    min={min}
-                    max={max}
+                  type="range"
+                  onChange={onChange}
+                  value={value}
+                  name={name}
+                  min={min}
+                  max={max}
                 />
-                <input type="number"
-                       onChange={onChange}
-                       className="value"
-                       value={value}
-                       min={min}
-                       max={max}
+                <input
+                  type="number"
+                  name={name}
+                  onChange={onChange}
+                  className="value"
+                  value={value}
+                  min={min}
+                  max={max}
+                  onKeyUp={onKeyUp}
                 />
               </div>
           )

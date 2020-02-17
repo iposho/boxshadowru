@@ -17,6 +17,18 @@ class Canvas extends React.Component {
     isRgb: false,
   };
 
+  validateNumericInputs = (max, min, name, value) => {
+    if (value <= Number(max) && value >= Number(min)) {
+      this.setState({
+        [name]: value,
+      })
+    } else {
+      this.setState({
+        [name]: Math.sign(value) === -1 ? min : max,
+      })
+    }
+  }
+
   handleChange = key => (e) => {
     switch (key) {
       case 'inset':
@@ -31,6 +43,12 @@ class Canvas extends React.Component {
         break;
     }
   }
+
+  onKeyUp = (e) => {
+    e.stopPropagation();
+    const { max, min, name, value } = e.target;
+    this.validateNumericInputs(max, min, name, value);
+  };
 
   handleChangeComplete = (color) => {
     const value = `rgb(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
@@ -70,27 +88,31 @@ class Canvas extends React.Component {
                 min={-100}
                 max={100}
                 value={offsetX}
+                onKeyUp={this.onKeyUp}
               />
               <SettingsItem
-                  name='offsetY'
-                  onChange={this.handleChange('offsetY')}
-                  min={-100}
-                  max={100}
-                  value={offsetY}
+                name='offsetY'
+                onChange={this.handleChange('offsetY')}
+                min={-100}
+                max={100}
+                value={offsetY}
+                onKeyUp={this.onKeyUp}
               />
               <SettingsItem
-                  name='blurRadius'
-                  onChange={this.handleChange('blurRadius')}
-                  min={0}
-                  max={100}
-                  value={blurRadius}
+                name='blurRadius'
+                onChange={this.handleChange('blurRadius')}
+                min={0}
+                max={100}
+                value={blurRadius}
+                onKeyUp={this.onKeyUp}
               />
               <SettingsItem
-                  name='spreadRadius'
-                  onChange={this.handleChange('spreadRadius')}
-                  min={-100}
-                  max={100}
-                  value={spreadRadius}
+                name='spreadRadius'
+                onChange={this.handleChange('spreadRadius')}
+                min={-100}
+                max={100}
+                value={spreadRadius}
+                onKeyUp={this.onKeyUp}
               />
               <div className="col-12 d-none d-lg-flex mb-4">
                 <code>

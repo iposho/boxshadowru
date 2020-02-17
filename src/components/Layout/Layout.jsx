@@ -1,4 +1,5 @@
 import React from 'react';
+import * as appData from '../../../package.json';
 
 import './Layout.css';
 
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
         <footer className="footer">
           <div className="row">
             <div className="col-12 text-center">
-              <small>© {new Date().getFullYear()} From Russia with Love</small>
+              <small>© {new Date().getFullYear()} From Russia with Love, v.{appData.default.version}</small>
             </div>
           </div>
         </footer>

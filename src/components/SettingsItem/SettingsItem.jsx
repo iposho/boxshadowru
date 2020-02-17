@@ -42,7 +42,7 @@ class SettingsItem extends React.Component {
 
   render() {
     return (
-      this.renderItem(this.props)
+      this.props && this.renderItem(this.props)
     );
   }
 }

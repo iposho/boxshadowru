@@ -45,7 +45,6 @@ class Canvas extends React.Component {
   }
 
   onKeyUp = (e) => {
-    e.stopPropagation();
     const { max, min, name, value } = e.target;
     this.validateNumericInputs(max, min, name, value);
   };

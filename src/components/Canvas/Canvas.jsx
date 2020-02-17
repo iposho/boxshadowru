@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { ChromePicker } from 'react-color';
+import SettingsItem from '../SettingsItem/SettingsItem';
+
+import items from './items';
 
 import './Canvas.css';
 
@@ -56,36 +59,41 @@ class Canvas extends React.Component {
           </div>
           <div className="row">
             <div className="col-12 col-md-9">
-              <div className="settingsItem">
-                <label htmlFor="inset">Inset</label>
-                <input type="checkbox" name="inset" onChange={this.handleChange('inset')} data-toggle="toggle" checked={inset} />
-              </div>
-              <div className="settingsItem">
-                <label htmlFor="offsetX">offsetX</label>
-                <input type="range" onChange={this.handleChange('offsetX')} value={offsetX} name="offsetX" min="-100" max="100" />
-                <input type="number"
-                       onChange={this.handleChange('offsetX')}
-                       className="value"
-                       value={offsetX}
-                       min="-100"
-                       max="100"
-                />
-              </div>
-              <div className="settingsItem">
-                <label htmlFor="offsetY">offsetY</label>
-                <input type="range" onChange={this.handleChange('offsetY')} value={offsetY} name="offsetY" min="-100" max="100" />
-                <input type="number" onChange={this.handleChange('offsetY')} className="value" value={offsetY} min={-100} max={100} />
-              </div>
-              <div className="settingsItem">
-                <label htmlFor="blurRadius">blurRadius</label>
-                <input type="range" onChange={this.handleChange('blurRadius')} value={blurRadius} name="blurRadius" min="0" max="100" />
-                <input type="number" onChange={this.handleChange('blurRadius')} className="value" value={blurRadius} min="0" max="100" />
-              </div>
-              <div className="settingsItem">
-                <label htmlFor="blurRadius">spreadRadius</label>
-                <input type="range" onChange={this.handleChange('spreadRadius')} value={spreadRadius} name="spreadRadius" min="-100" max="100" />
-                <input type="number" onChange={this.handleChange('spreadRadius')} className="value" value={spreadRadius} min="-100" max="100" />
-              </div>
+              <SettingsItem
+                  name='inset'
+                  onChange={this.handleChange('inset')}
+                  value={inset}
+                  type='checkbox'
+                  checked={inset}
+              />
+              <SettingsItem
+                name='offsetX'
+                onChange={this.handleChange('offsetX')}
+                min={-100}
+                max={100}
+                value={offsetX}
+              />
+              <SettingsItem
+                  name='offsetY'
+                  onChange={this.handleChange('offsetY')}
+                  min={-100}
+                  max={100}
+                  value={offsetY}
+              />
+              <SettingsItem
+                  name='blurRadius'
+                  onChange={this.handleChange('blurRadius')}
+                  min={-100}
+                  max={100}
+                  value={blurRadius}
+              />
+              <SettingsItem
+                  name='spreadRadius'
+                  onChange={this.handleChange('spreadRadius')}
+                  min={-100}
+                  max={100}
+                  value={spreadRadius}
+              />
               <div className="col-12 d-none d-md-flex mb-4">
                 <code>
                   box-shadow: {style.boxShadow};

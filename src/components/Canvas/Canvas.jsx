@@ -122,6 +122,7 @@ class Canvas extends React.Component {
             <div className="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end">
               <div className="settingsItem colorPicker">
                 <ChromePicker
+                    className="picker"
                     color={isRgb ? this.state.colorRgb : this.state.color}
                     onChangeComplete={this.handleChangeComplete}
                 />

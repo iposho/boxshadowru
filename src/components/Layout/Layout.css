@@ -10,3 +10,7 @@
 .footer {
     margin-top: 60px;
 }
+
+.footer small {
+    color: #6c757d;
+}

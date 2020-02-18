@@ -37,12 +37,16 @@
     align-items: flex-end;
 }
 
+.picker {
+    font-family: inherit !important;
+}
+
 code {
     padding: 30px 15px;
     margin-top: 60px;
     display: flex;
     justify-content: center;
-    background: #e5e5e5;
+    background: #f6f6f6;
     border-radius: 5px;
     width: 100%;
 }

@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { Slider, Switch } from '@material-ui/core';
+
+import './SettingsItem.css';
+
 class SettingsItem extends React.Component {
   renderItem = ({ checked = false, max, min, name = '', onChange, onKeyUp, type, value }) => {
       switch (type) {
@@ -7,12 +11,12 @@ class SettingsItem extends React.Component {
           return (
               <div className="settingsItem">
                 <label htmlFor={name}>{name}</label>
-                <input
-                    type="checkbox"
+                <Switch
+                    checked={checked}
                     name={name}
                     onChange={onChange}
+                    color="primary"
                     data-toggle="toggle"
-                    checked={checked}
                 />
               </div>
           )
@@ -20,13 +24,22 @@ class SettingsItem extends React.Component {
           return (
               <div className="settingsItem">
                 <label htmlFor={name}>{name}</label>
-                <input
-                  type="range"
-                  onChange={onChange}
-                  value={value}
-                  name={name}
-                  min={min}
-                  max={max}
+                {/*<input*/}
+                {/*  type="range"*/}
+                {/*  onChange={onChange}*/}
+                {/*  value={value}*/}
+                {/*  name={name}*/}
+                {/*  min={min}*/}
+                {/*  max={max}*/}
+                {/*/>*/}
+                <Slider
+                    step={1}
+                    onChange={onChange}
+                    min={min}
+                    max={max}
+                    value={value}
+                    valueLabelDisplay="auto"
+                    name={name}
                 />
                 <input
                   type="number"

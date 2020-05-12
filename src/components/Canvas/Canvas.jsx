@@ -29,7 +29,7 @@ class Canvas extends React.Component {
     }
   }
 
-  handleChange = key => (e) => {
+  handleChange = key => (e, value) => {
     switch (key) {
       case 'inset':
         this.setState({
@@ -38,7 +38,7 @@ class Canvas extends React.Component {
         break;
       default:
         this.setState({
-          [key]: e.target.value,
+          [key]: e.target.value || value,
         })
         break;
     }
@@ -119,7 +119,7 @@ class Canvas extends React.Component {
                 </code>
               </div>
             </div>
-            <div className="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end">
+            <div className="col-12 col-lg-3 d-flex mt-4 mb-4 mt-lg-0 mb-lg-0 justify-content-center align-items-lg-start justify-content-lg-end">
               <div className="settingsItem colorPicker">
                 <ChromePicker
                     className="picker"
@@ -128,7 +128,7 @@ class Canvas extends React.Component {
                 />
               </div>
             </div>
-            <div className="col-12 d-lg-none mb-4">
+            <div className="col-12 d-lg-none mt-lg-5 mb-4">
               <code>
                 box-shadow: {style.boxShadow};
               </code>

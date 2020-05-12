@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Noto Sans KR';
+    src: url("../../../src/assets/fonts/NotoSansKR-Regular.otf") format("opentype");
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 .header {
     margin-bottom: 45px;
     margin-top: 30px;
@@ -5,10 +14,6 @@
 
 .header h1 {
     font-size: 2rem;
-}
-
-.footer {
-    margin-top: 60px;
 }
 
 .footer small {

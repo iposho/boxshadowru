@@ -24,14 +24,6 @@ class SettingsItem extends React.Component {
           return (
               <div className="settingsItem">
                 <label htmlFor={name}>{name}</label>
-                {/*<input*/}
-                {/*  type="range"*/}
-                {/*  onChange={onChange}*/}
-                {/*  value={value}*/}
-                {/*  name={name}*/}
-                {/*  min={min}*/}
-                {/*  max={max}*/}
-                {/*/>*/}
                 <Slider
                     step={1}
                     onChange={onChange}

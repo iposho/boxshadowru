@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Noto Sans KR';
-    src: url("../../../src/assets/fonts/NotoSansKR-Regular.otf") format("opentype");
+    src: url('/assets/fonts/NotoSansKR-Regular.otf') format('opentype');
 }
 
 body {

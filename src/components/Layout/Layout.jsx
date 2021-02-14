@@ -5,23 +5,23 @@ import './Layout.css';
 
 const Layout = ({ children }) => {
   return (
-      <>
-        <header className="header container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <h1>Box Shadow Generator</h1>
-            </div>
+    <>
+      <header className="header container">
+        <div className="row">
+          <div className="col-12 text-center">
+            <h1>Box Shadow Generator</h1>
           </div>
-        </header>
-          {children}
-        <footer className="footer">
-          <div className="row">
-            <div className="col-12 text-center">
-              <small>© {new Date().getFullYear()} From Russia with Love, v.{appData.default.version}</small>
-            </div>
+        </div>
+      </header>
+        {children}
+      <footer className="footer">
+        <div className="row">
+          <div className="col-12 text-center">
+            <small>© {new Date().getFullYear()} From Russia with Love, v.{appData.default.version}</small>
           </div>
-        </footer>
-      </>
+        </div>
+      </footer>
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChromePicker } from 'react-color';
+import { CompactPicker } from 'react-color';
 import SettingsItem from '../SettingsItem/SettingsItem';
 
 import './Canvas.css';
@@ -66,75 +66,75 @@ class Canvas extends React.Component {
     }
 
     return (
-        <main className="main container">
-          <div className="row">
-            <div className="col-12 justify-content-center bs-example-wrapper">
-              <div className="bs-example" style={style}></div>
-            </div>
+      <main className="main container">
+        <div className="row">
+          <div className="col-12 justify-content-center bs-example-wrapper">
+            <div className="bs-example" style={style}></div>
           </div>
-          <div className="row">
-            <div className="col-12 col-lg-9">
-              <SettingsItem
-                  name='inset'
-                  onChange={this.handleChange('inset')}
-                  value={inset}
-                  type='checkbox'
-                  checked={inset}
-              />
-              <SettingsItem
-                name='offsetX'
-                onChange={this.handleChange('offsetX')}
-                min={-100}
-                max={100}
-                value={offsetX}
-                onKeyUp={this.onKeyUp}
-              />
-              <SettingsItem
-                name='offsetY'
-                onChange={this.handleChange('offsetY')}
-                min={-100}
-                max={100}
-                value={offsetY}
-                onKeyUp={this.onKeyUp}
-              />
-              <SettingsItem
-                name='blurRadius'
-                onChange={this.handleChange('blurRadius')}
-                min={0}
-                max={100}
-                value={blurRadius}
-                onKeyUp={this.onKeyUp}
-              />
-              <SettingsItem
-                name='spreadRadius'
-                onChange={this.handleChange('spreadRadius')}
-                min={-100}
-                max={100}
-                value={spreadRadius}
-                onKeyUp={this.onKeyUp}
-              />
-              <div className="col-12 d-none d-lg-flex mb-4">
-                <code>
-                  box-shadow: {style.boxShadow};
-                </code>
-              </div>
-            </div>
-            <div className="col-12 col-lg-3 d-flex mt-4 mb-4 mt-lg-0 mb-lg-0 justify-content-center align-items-lg-start justify-content-lg-end">
-              <div className="settingsItem colorPicker">
-                <ChromePicker
-                    className="picker"
-                    color={isRgb ? this.state.colorRgb : this.state.color}
-                    onChangeComplete={this.handleChangeComplete}
-                />
-              </div>
-            </div>
-            <div className="col-12 d-lg-none mt-lg-5 mb-4">
+        </div>
+        <div className="row">
+          <div className="col-12 col-lg-9">
+            <SettingsItem
+              name='inset'
+              onChange={this.handleChange('inset')}
+              value={inset}
+              type='checkbox'
+              checked={inset}
+            />
+            <SettingsItem
+              name='offsetX'
+              onChange={this.handleChange('offsetX')}
+              min={-100}
+              max={100}
+              value={offsetX}
+              onKeyUp={this.onKeyUp}
+            />
+            <SettingsItem
+              name='offsetY'
+              onChange={this.handleChange('offsetY')}
+              min={-100}
+              max={100}
+              value={offsetY}
+              onKeyUp={this.onKeyUp}
+            />
+            <SettingsItem
+              name='blurRadius'
+              onChange={this.handleChange('blurRadius')}
+              min={0}
+              max={100}
+              value={blurRadius}
+              onKeyUp={this.onKeyUp}
+            />
+            <SettingsItem
+              name='spreadRadius'
+              onChange={this.handleChange('spreadRadius')}
+              min={-100}
+              max={100}
+              value={spreadRadius}
+              onKeyUp={this.onKeyUp}
+            />
+            <div className="col-12 d-none d-lg-flex mb-4">
               <code>
                 box-shadow: {style.boxShadow};
               </code>
             </div>
           </div>
-        </main>
+          <div className="col-12 col-lg-3 d-flex mt-4 mb-4 mt-lg-0 mb-lg-0 justify-content-center align-items-lg-start justify-content-lg-end">
+            <div className="settingsItem colorPicker">
+              <CompactPicker
+                className="picker"
+                color={isRgb ? this.state.colorRgb : this.state.color}
+                onChangeComplete={this.handleChangeComplete}
+              />
+            </div>
+          </div>
+          <div className="col-12 d-lg-none mt-lg-5 mb-4">
+            <code>
+              box-shadow: {style.boxShadow};
+            </code>
+          </div>
+        </div>
+      </main>
     );
   }
 }

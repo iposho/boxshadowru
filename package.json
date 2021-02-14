@@ -1,6 +1,6 @@
 {
   "name": "box-shadow-generator",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "private": true,
   "author": "Pavel Kuzyakin <pavel@kuzyakin.me> (https://kuzyakin.me)",
   "dependencies": {
@@ -14,8 +14,7 @@
     "react-color": "^2.18.0",
     "react-dom": "^16.12.0",
     "react-scripts": "^4.0.2",
-    "sass": "^1.32.7",
-    "uuid": "^8.3.2"
+    "sass": "^1.32.7"
   },
   "scripts": {
     "start": "react-scripts start",

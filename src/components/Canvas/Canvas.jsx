@@ -1,11 +1,7 @@
 import React from 'react';
 
-import { v4 as uuid } from 'uuid';
-
 import { SketchPicker } from 'react-color';
 import SettingsItem from '../SettingsItem/SettingsItem';
-
-import items from './items';
 
 import './Canvas.scss';
 
@@ -35,7 +31,6 @@ class Canvas extends React.Component {
 
   handleChange = (key) => (e, value) => {
     const { inset } = this.state;
-
     switch (key) {
     case 'inset':
       this.setState({
@@ -84,21 +79,45 @@ class Canvas extends React.Component {
         </div>
         <div className="row">
           <div className="col-12 col-lg-9">
-            {
-              items.map((item) => (
-                <SettingsItem
-                  key={uuid()}
-                  name={item.name}
-                  onChange={this.handleChange(item.name)}
-                  value={this.state[item.name]}
-                  type={item.type ? item.type : false}
-                  min={item.min}
-                  max={item.max}
-                  checked={this.state[item.name]}
-                  onKeyUp={this.onKeyUp}
-                />
-              ))
-            }
+            <SettingsItem
+              name="inset"
+              onChange={this.handleChange('inset')}
+              value={inset}
+              type="checkbox"
+              checked={inset}
+            />
+            <SettingsItem
+              name="offsetX"
+              onChange={this.handleChange('offsetX')}
+              min={-100}
+              max={100}
+              value={offsetX}
+              onKeyUp={this.onKeyUp}
+            />
+            <SettingsItem
+              name="offsetY"
+              onChange={this.handleChange('offsetY')}
+              min={-100}
+              max={100}
+              value={offsetY}
+              onKeyUp={this.onKeyUp}
+            />
+            <SettingsItem
+              name="blurRadius"
+              onChange={this.handleChange('blurRadius')}
+              min={0}
+              max={100}
+              value={blurRadius}
+              onKeyUp={this.onKeyUp}
+            />
+            <SettingsItem
+              name="spreadRadius"
+              onChange={this.handleChange('spreadRadius')}
+              min={-100}
+              max={100}
+              value={spreadRadius}
+              onKeyUp={this.onKeyUp}
+            />
             <div className="col-12 d-none d-lg-flex mb-4">
               <code>
                 box-shadow:

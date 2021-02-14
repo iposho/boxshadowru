@@ -5,46 +5,48 @@ import { Slider, Switch } from '@material-ui/core';
 import './SettingsItem.css';
 
 class SettingsItem extends React.Component {
-  renderItem = ({ checked = false, max, min, name = '', onChange, onKeyUp, type, value }) => {
+  renderItem = ({
+    checked = false, max, min, name = '', onChange, onKeyUp, type, value,
+  }) => {
     switch (type) {
-      case 'checkbox':
-        return (
-          <div className="settingsItem">
-            <label htmlFor={name}>{name}</label>
-            <Switch
-                checked={checked}
-                name={name}
-                onChange={onChange}
-                color="primary"
-                data-toggle="toggle"
-            />
-          </div>
-        )
-      default:
-        return (
-          <div className="settingsItem">
-            <label htmlFor={name}>{name}</label>
-            <Slider
-                step={1}
-                onChange={onChange}
-                min={min}
-                max={max}
-                value={value}
-                valueLabelDisplay="auto"
-                name={name}
-            />
-            <input
-              type="number"
-              name={name}
-              onChange={onChange}
-              className="value"
-              value={value}
-              min={min}
-              max={max}
-              onKeyUp={onKeyUp}
-            />
-          </div>
-        )
+    case 'checkbox':
+      return (
+        <div className="settingsItem">
+          <label htmlFor={name}>{name}</label>
+          <Switch
+            checked={checked}
+            name={name}
+            onChange={onChange}
+            color="primary"
+            data-toggle="toggle"
+          />
+        </div>
+      );
+    default:
+      return (
+        <div className="settingsItem">
+          <label htmlFor={name}>{name}</label>
+          <Slider
+            step={1}
+            onChange={onChange}
+            min={min}
+            max={max}
+            value={value}
+            valueLabelDisplay="auto"
+            name={name}
+          />
+          <input
+            type="number"
+            name={name}
+            onChange={onChange}
+            className="value"
+            value={value}
+            min={min}
+            max={max}
+            onKeyUp={onKeyUp}
+          />
+        </div>
+      );
     }
   };
 

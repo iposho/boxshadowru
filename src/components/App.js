@@ -1,17 +1,16 @@
 import React from 'react';
 
-import 'normalize.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/css/global.css';
-
 import Layout from './Layout/Layout';
 import Canvas from './Canvas/Canvas';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../assets/css/global.scss';
+
 function App() {
   return (
-      <Layout>
-        <Canvas />
-      </Layout>
+    <Layout>
+      <Canvas />
+    </Layout>
   );
 }
 

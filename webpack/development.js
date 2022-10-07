@@ -10,7 +10,7 @@ const getTemplateParameters = require('../configs/parameters');
 const babelConfig = `${rootDir}/configs/babel.config.js`;
 
 module.exports = {
-  context: rootDir,
+  context: __dirname,
   entry: `${rootDir}/src/index.js`,
   mode: 'development',
   devtool: 'source-map',
@@ -70,6 +70,7 @@ module.exports = {
               modules: {
                 localIdentName: '[name]__[local]___[hash:base64:5]',
               },
+              importLoaders: 1,
               sourceMap: true,
             },
           },
@@ -80,6 +81,21 @@ module.exports = {
             },
           },
         ],
+        include: /\.module\.(sa|sc|c)ss$/,
+      },
+      {
+        test: (/\.(sa|sc|c)ss$/),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          'sass-loader',
+        ],
+        exclude: /\.module\.(sa|sc|c)ss$/,
       },
       {
         test: /\.(png|jpe?g|gif|webp|svg)$/i,
@@ -101,8 +117,8 @@ module.exports = {
     new DefinePlugin({
       process: {
         env: {
-          development: true
-        }
+          development: true,
+        },
       },
     }),
     new HtmlWebPackPlugin({

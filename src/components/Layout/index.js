@@ -1,44 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import * as appData from '../../../package.json';
-
+import Header from './parts/Header';
 import GithubLink from '../GithubLink';
+import Footer from './parts/Footer';
 
-import css from './style.scss';
+import css from './Layout.module.scss';
 
-const Index = ({ children }) => (
+const Layout = ({ children }) => (
   <>
-    <header className={`${css.header} container`}>
-      <div className="row">
-        <div className="col-12 text-center">
-          <h1>Box Shadow Generator</h1>
-        </div>
-      </div>
-    </header>
+    <Header className={css.header} />
     {children}
     <GithubLink />
-    <footer className={css.footer}>
-      <div className="row">
-        <div className="col-12 text-center">
-          <small>
-            © 2020–
-            {new Date().getFullYear()}
-            {' '}
-            From Russia with Love, v.
-            {appData.default.version}
-          </small>
-        </div>
-      </div>
-    </footer>
+    <Footer className={css.footer} />
   </>
 );
 
-Index.defaultProps = {
+Layout.defaultProps = {
   children: {},
 };
 
-Index.propTypes = {
+Layout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.node),
@@ -46,4 +28,4 @@ Index.propTypes = {
   ]),
 };
 
-export default Index;
+export default Layout;

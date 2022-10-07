@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Slider, Switch } from '@material-ui/core';
 
-import css from './style.scss';
+import './style.scss';
 
-class SettingsItem extends React.Component {
-  renderItem = ({
+const SettingsItem = (props) => {
+  const renderItem = ({
     checked = false, className, max, min, name = '', onChange, onKeyUp, type, value,
   }) => {
     switch (type) {
@@ -50,11 +50,9 @@ class SettingsItem extends React.Component {
     }
   };
 
-  render() {
-    return (
-      this.props && this.renderItem(this.props)
-    );
-  }
-}
+  return (
+    props && renderItem(props)
+  );
+};
 
 export default SettingsItem;

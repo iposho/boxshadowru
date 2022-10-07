@@ -1,7 +1,11 @@
 {
   "name": "box-shadow-generator",
   "version": "2.1.1",
-  "author": "Pavel Kuzyakin <pavel@kuzyak.in> (https://kuzyak.in)",
+  "author": {
+    "name" : "Pavel Kuzyakin",
+    "email" : "pavel@kuzyak.in",
+    "url" : "http://kuzyak.in"
+  },
   "keywords": [
     "reactjs",
     "homepage",
@@ -9,6 +13,7 @@
   ],
   "dependencies": {
     "@material-ui/core": "^4.9.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "bootstrap": "^4.4.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -43,7 +48,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/plugin-transform-react-jsx-source": "^7.16.7",
-    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-react": "^7.18.6",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^10.2.0",

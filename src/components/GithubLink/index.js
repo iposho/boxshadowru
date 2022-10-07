@@ -1,7 +1,8 @@
 import React from 'react';
 
 import image from '../../assets/images/right-graphite@2x.png';
-import css from './style.scss';
+
+import css from './GithubLink.module.scss';
 
 const GithubLink = () => (
   <div className={css.githubLink}>

@@ -13,7 +13,10 @@ const Footer = ({ className }) => (
           —
           {new Date().getFullYear()}
           {' '}
-          From Russia with Love, v.
+          <a href={params.url}>
+            {params.author}
+          </a>
+          , v.
           {params.version}
         </small>
       </div>

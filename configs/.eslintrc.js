@@ -43,7 +43,10 @@ module.exports = {
         devDependencies: true,
       },
     ],
-    quotes: ['error', 'single'],
+    quotes: [
+      'error',
+      'single',
+    ],
     'jsx-a11y/anchor-is-valid': [
       'error', {
         components: ['Link'],

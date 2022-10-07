@@ -157,6 +157,22 @@ module.exports = {
           from: `${rootDir}/static/robots.txt`,
           to: 'robots.txt',
         },
+        {
+          from: `${rootDir}/static/manifest.json`,
+          to: 'manifest.json',
+        },
+        {
+          from: `${rootDir}/static/logo192.png`,
+          to: 'logo192.png',
+        },
+        {
+          from: `${rootDir}/static/logo512.png`,
+          to: 'logo512.png',
+        },
+        {
+          from: `${rootDir}/static/preview.png`,
+          to: 'images/preview.png',
+        }
       ],
     }),
     new MiniCssExtractPlugin({

@@ -1,0 +1,94 @@
+.settingsItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  input[type='range'] {
+    width: 100%;
+  }
+
+  input[type='checkbox'] {
+    margin-left: -34px;
+  }
+
+  input[type='number'] {
+    width: 100%;
+    max-width: 6ch;
+    padding: 0 5px;
+    border: 1px solid rgb(63 81 181 / 50%);
+    margin-left: 1rem;
+    border-radius: 5px;
+    color: #666;
+
+    &:hover {
+      border: 1px solid rgb(63 81 181 / 100%);
+      color: #444;
+    }
+  }
+
+  input[type='text'] {
+    width: 100%;
+    max-width: 8ch;
+    margin-left: 1rem;
+  }
+
+  label {
+    width: 140px;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.picker {
+  font-family: inherit !important;
+}
+
+.picker label {
+  width: auto;
+}
+
+code {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 30px 15px;
+  background: #f6f6f6;
+  border-radius: 5px;
+}
+
+.bsExampleWrapper {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.bsExample {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+
+.value::after {
+  margin-left: 5px;
+  content: '€';
+}
+
+.input {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  margin: 15px 0;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #e83e8c;
+  font-family: monospace;
+  text-align: center;
+}
+
+.colorPicker {
+  position: absolute;
+  right: 15px;
+  display: inline-flex;
+}

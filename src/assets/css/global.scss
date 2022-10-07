@@ -7,12 +7,3 @@
     align-items: center;
     flex-direction: column;
 }
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    src: url('../fonts/NotoSansKR-Regular.otf') format('opentype');
-}
-
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-}

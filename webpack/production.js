@@ -74,6 +74,7 @@ module.exports = {
               modules: {
                 localIdentName: '[local]_[hash:base64:5]',
               },
+              importLoaders: 1,
               sourceMap: true,
             },
           },
@@ -92,6 +93,40 @@ module.exports = {
             },
           },
         ],
+        include: /\.module\.(sa|sc|c)ss$/,
+      },
+      {
+        test: (/\.(sa|sc|c)ss$/),
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: postcssConfig,
+              },
+            },
+          },
+        ],
+        exclude: /\.module\.(sa|sc|c)ss$/,
       },
       {
         test: /\.(png|jpe?g|gif|webp|svg)$/i,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { SketchPicker } from 'react-color';
+import InputColor from 'react-input-color';
+
 import SettingsItem from '../SettingsItem';
 
 import css from './Canvas.module.scss';
@@ -59,21 +60,19 @@ const Canvas = () => {
   };
 
   const handleChangeComplete = (color) => {
-    const value = `rgb(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
-
     setState({
       ...state,
-      color: value,
-      isRgb: true,
+      color: color.hex,
+      colorRgb: color.rgba,
     });
   };
 
   const {
-    inset, isRgb, offsetX, offsetY, blurRadius, spreadRadius, color, colorRgb,
+    inset, offsetX, offsetY, blurRadius, spreadRadius, color, colorRgb,
   } = state;
 
   const style = {
-    boxShadow: `${inset ? 'inset' : ''} ${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${color}`,
+    boxShadow: `${inset ? 'inset' : ''} ${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${colorRgb}`,
   };
 
   const codeValue = `box-shadow: ${style.boxShadow}`;
@@ -86,7 +85,7 @@ const Canvas = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-lg-9">
+        <div className="col-12">
           <SettingsItem
             name="inset"
             onChange={handleChange('inset')}
@@ -94,7 +93,15 @@ const Canvas = () => {
             type="checkbox"
             checked={inset}
             className={css.settingsItem}
-          />
+          >
+            <div className={css.colorPicker}>
+              <InputColor
+                initialValue={color}
+                onChange={handleChangeComplete}
+                placement="right"
+              />
+            </div>
+          </SettingsItem>
           <SettingsItem
             name="offsetX"
             onChange={handleChange('offsetX')}
@@ -133,18 +140,6 @@ const Canvas = () => {
           />
           <div className="col-12 d-none d-lg-flex mb-4">
             <code>{codeValue}</code>
-          </div>
-        </div>
-        <div
-          className="col-12 col-lg-3 d-flex mt-4 mb-4 mt-lg-0 mb-lg-0
-             justify-content-center align-items-lg-start justify-content-lg-end"
-        >
-          <div className="settingsItem colorPicker">
-            <SketchPicker
-              className={css.picker}
-              color={color}
-              onChangeComplete={handleChangeComplete}
-            />
           </div>
         </div>
         <div className="col-12 d-lg-none mt-lg-5 mb-4">

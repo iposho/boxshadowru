@@ -6,7 +6,16 @@ import './style.scss';
 
 const SettingsItem = (props) => {
   const renderItem = ({
-    checked = false, className, max, min, name = '', onChange, onKeyUp, type, value,
+    checked = false,
+    children,
+    className,
+    max,
+    min,
+    name = '',
+    onChange,
+    onKeyUp,
+    type,
+    value,
   }) => {
     switch (type) {
     case 'checkbox':
@@ -20,6 +29,7 @@ const SettingsItem = (props) => {
             color="primary"
             data-toggle="toggle"
           />
+          {children}
         </div>
       );
     default:

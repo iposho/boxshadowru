@@ -6,10 +6,12 @@
     "email": "pavel@kuzyak.in",
     "url": "http://kuzyak.in"
   },
+  "description": 'A box-shadow CSS generator that helps you quickly generate box-shadow CSS declarations for your website. Preview the result and copy the generated code to your website. No coding required!',
   "keywords": [
-    "reactjs",
-    "homepage",
-    "personal-website"
+    "react",
+    "css",
+    "generator",
+    "boxshadow"
   ],
   "dependencies": {
     "@material-ui/core": "^4.9.2",

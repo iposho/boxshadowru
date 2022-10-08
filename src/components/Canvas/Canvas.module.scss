@@ -69,6 +69,13 @@ code {
   border: 1px solid #e5e5e5;
   background-color: #fff;
   border-radius: 7px;
+
+  code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .value::after {

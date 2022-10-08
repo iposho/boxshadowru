@@ -81,7 +81,9 @@ const Canvas = () => {
     <main className="main container">
       <div className="row">
         <div className={`${css.bsExampleWrapper} col-12 justify-content-center`}>
-          <div className={`${css.bsExample}`} style={style} />
+          <div className={`${css.bsExample}`} style={style}>
+            <code>{codeValue}</code>
+          </div>
         </div>
       </div>
       <div className="row">
@@ -138,12 +140,6 @@ const Canvas = () => {
             onKeyUp={onKeyUp}
             className={css.settingsItem}
           />
-          <div className="col-12 d-none d-lg-flex mb-4">
-            <code>{codeValue}</code>
-          </div>
-        </div>
-        <div className="col-12 d-lg-none mt-lg-5 mb-4">
-          <code>{codeValue}</code>
         </div>
       </div>
     </main>

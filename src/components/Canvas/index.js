@@ -15,6 +15,7 @@ const initialState = {
   color: '#999999',
   colorRgb: '',
   isRgb: false,
+  isCopied: false,
 };
 
 const Canvas = () => {
@@ -25,11 +26,13 @@ const Canvas = () => {
       setState({
         ...state,
         [name]: value,
+        isCopied: false,
       });
     } else {
       setState({
         ...state,
         [name]: Math.sign(value) === -1 ? min : max,
+        isCopied: false,
       });
     }
   };
@@ -41,12 +44,14 @@ const Canvas = () => {
       setState({
         ...state,
         inset: !inset,
+        isCopied: false,
       });
       break;
     default:
       setState({
         ...state,
         [key]: e.target.value || value,
+        isCopied: false,
       });
       break;
     }
@@ -64,18 +69,34 @@ const Canvas = () => {
       ...state,
       color: color.hex,
       colorRgb: color.rgba,
+      isCopied: false,
     });
   };
 
   const {
-    inset, offsetX, offsetY, blurRadius, spreadRadius, color, colorRgb,
+    blurRadius,
+    color,
+    colorRgb,
+    inset,
+    isCopied,
+    offsetX,
+    offsetY,
+    spreadRadius,
   } = state;
 
   const style = {
     boxShadow: `${inset ? 'inset' : ''} ${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${colorRgb}`,
   };
 
-  const codeValue = `box-shadow: ${style.boxShadow}`;
+  const codeValue = `box-shadow: ${style.boxShadow};`;
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(codeValue);
+    setState({
+      ...state,
+      isCopied: true,
+    });
+  };
 
   return (
     <main className="main container">
@@ -83,6 +104,11 @@ const Canvas = () => {
         <div className={`${css.bsExampleWrapper} col-12 justify-content-center`}>
           <div className={`${css.bsExample}`} style={style}>
             <code>{codeValue}</code>
+            <button onClick={handleCopyClick} type="button">
+              🗒️
+              {' '}
+              {isCopied ? 'Copied' : 'Copy'}
+            </button>
           </div>
         </div>
       </div>

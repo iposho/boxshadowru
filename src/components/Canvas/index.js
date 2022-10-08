@@ -4,9 +4,11 @@ import InputColor from 'react-input-color';
 
 import SettingsItem from '../SettingsItem';
 
+import { getStateFromLocalStorage, setStateToLocalStorage } from '../../helpers/localStorage';
+
 import css from './Canvas.module.scss';
 
-const initialState = {
+const defaultState = {
   inset: false,
   offsetX: 8,
   offsetY: 8,
@@ -16,6 +18,8 @@ const initialState = {
   colorRgb: '',
   isRgb: false,
 };
+
+const initialState = getStateFromLocalStorage(defaultState);
 
 const Canvas = () => {
   const [state, setState] = useState(initialState);
@@ -32,6 +36,7 @@ const Canvas = () => {
         [name]: Math.sign(value) === -1 ? min : max,
       });
     }
+    setStateToLocalStorage(state);
   };
 
   const handleChange = (key) => (e, value) => {
@@ -42,12 +47,14 @@ const Canvas = () => {
         ...state,
         inset: !inset,
       });
+      setStateToLocalStorage(state);
       break;
     default:
       setState({
         ...state,
         [key]: e.target.value || value,
       });
+      setStateToLocalStorage(state);
       break;
     }
   };
@@ -57,6 +64,7 @@ const Canvas = () => {
       max, min, name, value,
     } = e.target;
     validateNumericInputs(max, min, name, value);
+    setStateToLocalStorage(state);
   };
 
   const handleChangeComplete = (color) => {
@@ -65,6 +73,9 @@ const Canvas = () => {
       color: color.hex,
       colorRgb: color.rgba,
     });
+    if (color.hex !== state.color) {
+      setStateToLocalStorage(state);
+    }
   };
 
   const {

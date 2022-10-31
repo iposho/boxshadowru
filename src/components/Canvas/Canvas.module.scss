@@ -66,26 +66,28 @@ code {
   width: 100%;
   max-width: 400px;
   min-height: 200px;
-  border: 1px solid #e5e5e5;
-  background-color: #fff;
-  border-radius: 7px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  border-radius: 7px;
 
   code {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     background-color: transparent;
+    text-align: center;
   }
 
   button {
+    display: flex;
+    align-items: center;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
-    font-size: 0.85rem;
     color: #444;
+    font-size: .85rem;
   }
 }
 
@@ -110,4 +112,10 @@ code {
   position: absolute;
   right: 15px;
   display: inline-flex;
+}
+
+.copyIcon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: .25rem;
 }

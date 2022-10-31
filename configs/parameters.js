@@ -11,4 +11,10 @@ module.exports = {
   since: 2020,
   ogImage: '/images/preview.png',
   themeColor: '#ffffff',
+  yMetrica: {
+    accounts: [57579400],
+    options: {
+      webvisor: true,
+    },
+  },
 };

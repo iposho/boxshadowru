@@ -1,6 +1,6 @@
 import React from 'react';
 
-import image from '../../assets/images/right-graphite@2x.png';
+import image from '../../assets/images/right-graphite_2x.webp';
 
 import css from './GithubLink.module.scss';
 

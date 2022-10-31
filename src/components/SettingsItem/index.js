@@ -28,6 +28,7 @@ const SettingsItem = (props) => {
             onChange={onChange}
             color="primary"
             data-toggle="toggle"
+            id={name}
           />
           {children}
         </div>
@@ -54,6 +55,7 @@ const SettingsItem = (props) => {
             min={min}
             max={max}
             onKeyUp={onKeyUp}
+            id={name}
           />
         </div>
       );

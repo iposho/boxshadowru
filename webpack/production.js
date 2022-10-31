@@ -172,7 +172,7 @@ module.exports = {
         {
           from: `${rootDir}/static/preview.png`,
           to: 'images/preview.png',
-        }
+        },
       ],
     }),
     new MiniCssExtractPlugin({

@@ -4,6 +4,8 @@ import InputColor from 'react-input-color';
 
 import SettingsItem from '../SettingsItem';
 
+import image from '../../assets/images/copy.svg';
+
 import css from './Canvas.module.scss';
 
 const initialState = {
@@ -105,9 +107,8 @@ const Canvas = () => {
           <div className={`${css.bsExample}`} style={style}>
             <code>{codeValue}</code>
             <button onClick={handleCopyClick} type="button">
-              🗒️
-              {' '}
-              {isCopied ? 'Copied' : 'Copy'}
+              <img className={css.copyIcon} src={image} alt="Copy icon" />
+              {isCopied ? 'Copied ✔️' : 'Copy'}
             </button>
           </div>
         </div>

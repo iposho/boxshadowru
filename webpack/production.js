@@ -171,7 +171,7 @@ module.exports = {
         },
         {
           from: `${rootDir}/static/preview.png`,
-          to: 'images/preview.png',
+          to: 'assets/images/preview.png',
         },
       ],
     }),

@@ -47,15 +47,6 @@
   width: auto;
 }
 
-code {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 30px 15px;
-  background: #f6f6f6;
-  border-radius: 5px;
-}
-
 .bsExampleWrapper {
   display: flex;
   margin-bottom: 60px;
@@ -79,6 +70,9 @@ code {
     justify-content: center;
     background-color: transparent;
     text-align: center;
+    color: #850F48;
+    padding: 30px 15px;
+    border-radius: 5px;
   }
 
   button {

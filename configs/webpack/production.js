@@ -9,8 +9,8 @@ const { DefinePlugin } = require('webpack');
 
 const path = require('path');
 
-const rootDir = path.resolve(__dirname, '../');
-const getTemplateParameters = require('../configs/parameters');
+const rootDir = path.resolve(__dirname, '../../');
+const getTemplateParameters = require('../parameters');
 
 const babelConfig = `${rootDir}/configs/babel.config.js`;
 const postcssConfig = `${rootDir}/configs/postcss.config.js`;
@@ -97,7 +97,7 @@ module.exports = {
       },
       {
         test: (/\.(sa|sc|c)ss$/),
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /\.module\.(sa|sc|c)ss$/],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -126,7 +126,6 @@ module.exports = {
             },
           },
         ],
-        exclude: /\.module\.(sa|sc|c)ss$/,
       },
       {
         test: /\.(png|jpe?g|gif|webp|svg)$/i,

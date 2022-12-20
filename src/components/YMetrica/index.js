@@ -9,6 +9,6 @@ const { accounts, options } = yMetrica;
 
 const isDevelopment = process.env.development;
 
-const YMetrika = () => (!isDevelopment ? <YMInitializer accounts={accounts} options={options} /> : null);
+const YMetrika = () => (!isDevelopment && <YMInitializer accounts={accounts} options={options} />);
 
 export default YMetrika;

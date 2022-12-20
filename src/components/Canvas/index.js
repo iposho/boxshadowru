@@ -41,6 +41,7 @@ const Canvas = () => {
 
   const handleChange = (key) => (e, value) => {
     const { inset } = state;
+
     switch (key) {
     case 'inset':
       setState({
@@ -63,6 +64,7 @@ const Canvas = () => {
     const {
       max, min, name, value,
     } = e.target;
+
     validateNumericInputs(max, min, name, value);
   };
 
@@ -93,11 +95,18 @@ const Canvas = () => {
   const codeValue = `box-shadow: ${style.boxShadow};`;
 
   const handleCopyClick = () => {
+    if (isCopied) {
+      return false;
+    }
+
     navigator.clipboard.writeText(codeValue);
+
     setState({
       ...state,
       isCopied: true,
     });
+
+    return false;
   };
 
   return (

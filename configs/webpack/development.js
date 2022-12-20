@@ -4,8 +4,8 @@ const { DefinePlugin } = require('webpack');
 
 const path = require('path');
 
-const rootDir = path.resolve(__dirname, '../');
-const getTemplateParameters = require('../configs/parameters');
+const rootDir = path.resolve(__dirname, '../../');
+const getTemplateParameters = require('../parameters');
 
 const babelConfig = `${rootDir}/configs/babel.config.js`;
 

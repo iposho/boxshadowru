@@ -1,6 +1,7 @@
 import React from 'react';
 
 import params from '../../../../configs/parameters';
+import createDateDiapason from '../../../helpers/createDateDiapason';
 
 const Footer = ({ className }) => (
   <footer className={className}>
@@ -9,9 +10,7 @@ const Footer = ({ className }) => (
         <small>
           ©
           {' '}
-          {params.since}
-          —
-          {new Date().getFullYear()}
+          {createDateDiapason(params.since)}
           {' '}
           <a href={params.url}>
             {params.author}

@@ -82,6 +82,10 @@
     border-radius: 5px;
     color: #444;
     font-size: .85rem;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }
 

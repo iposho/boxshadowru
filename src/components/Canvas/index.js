@@ -115,7 +115,11 @@ const Canvas = () => {
         <div className={`${css.bsExampleWrapper} col-12 justify-content-center`}>
           <div className={`${css.bsExample}`} style={style}>
             <code>{codeValue}</code>
-            <button onClick={handleCopyClick} type="button">
+            <button
+              onClick={handleCopyClick}
+              type="button"
+              disabled={isCopied}
+            >
               <img className={css.copyIcon} src={image} alt="Copy icon" />
               {isCopied ? 'Copied ✔️' : 'Copy'}
             </button>
